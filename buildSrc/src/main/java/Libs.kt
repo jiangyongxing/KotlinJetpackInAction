@@ -9,4 +9,11 @@ object Libs {
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+
+    // Kotlin
+    const val kotlinStdLib =
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlinVersion}"
+    const val ktxCore = "androidx.core:core-ktx:${Versions.ktxCore}"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 }
