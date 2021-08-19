@@ -18,7 +18,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var stringRequest: StringRequest
-    lateinit var requestQueue: RequestQueue
+    val requestQueue: RequestQueue by lazy {
+        Volley.newRequestQueue(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +34,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestOnlineInfo() {
-        requestQueue = Volley.newRequestQueue(this)
         val url = "https://api.github.com/users/JakeWharton"
         stringRequest = StringRequest(Request.Method.GET, url,
                 { response -> display(response) }) { error -> Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show() }
