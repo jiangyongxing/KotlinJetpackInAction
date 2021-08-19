@@ -49,10 +49,10 @@ class MainActivity : AppCompatActivity() {
         if (user != null) {
             Glide.with(this).load("file:///android_asset/bless.gif").into(gif!!)
             Glide.with(this).load(user.avatar_url).apply(RequestOptions.circleCropTransform()).into(image!!)
-            username!!.text = user.name
-            company!!.text = user.company
-            website!!.text = user.blog
-            image!!.setOnClickListener { gotoImagePreviewActivity(user) }
+            username.text = user.name
+            company.text = user.company
+            website.text = user.blog
+            image.setOnClickListener { gotoImagePreviewActivity(user) }
         }
     }
 
