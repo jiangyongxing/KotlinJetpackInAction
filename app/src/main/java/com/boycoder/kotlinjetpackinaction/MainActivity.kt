@@ -41,17 +41,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun display(response: String?) {
-        if (TextUtils.isEmpty(response)) {
+        if (response.isNullOrBlank()) {
             return
         }
         val gson = Gson()
         val user = gson.fromJson(response, User::class.java)
-        if (user != null) {
-            Glide.with(this).load("file:///android_asset/bless.gif").into(gif!!)
-            Glide.with(this).load(user.avatar_url).apply(RequestOptions.circleCropTransform()).into(image!!)
-            username.text = user.name
-            company.text = user.company
-            website.text = user.blog
+        Glide.with(this).load("file:///android_asset/bless.gif").into(gif!!)
+        Glide.with(this).load(user.avatar_url).apply(RequestOptions.circleCropTransform()).into(image!!)
+        user?.apply {
+            username.text = this.name
+            tvCompany.text = this.company
+            website.text = this.blog
             image.setOnClickListener { gotoImagePreviewActivity(user) }
         }
     }
