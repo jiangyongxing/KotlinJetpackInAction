@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(ProjectProperties.compileSdk)
 
     defaultConfig {
         applicationId = "com.boycoder.kotlinjetpackinaction"
-        minSdkVersion(21)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(ProjectProperties.minSdk)
+        targetSdkVersion(ProjectProperties.targetSdk)
+        versionCode = ProjectProperties.versionCode
+        versionName = ProjectProperties.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
